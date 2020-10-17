@@ -34,7 +34,6 @@ describe "workspace tests" do
     end
   end
 
-
   describe '#details' do
     it "will get channel details" do
       VCR.use_cassette("create_workspace") do
