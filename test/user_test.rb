@@ -17,7 +17,6 @@ describe 'User' do
         expect(@test_case.real_name).must_equal 'Ariel Jones'
       end
 
-
       it "user instance variables, should be an instance of string" do
         expect(@test_case.name).must_be_instance_of String
         expect(@test_case.slack_id).must_be_instance_of String
@@ -36,7 +35,6 @@ describe 'User' do
       end
     end
   end
-
 
   describe '.self.list' do
     before do
