@@ -2,8 +2,8 @@ require_relative 'user'
 require_relative 'channel'
 require_relative 'recipient'
 require 'httparty'
-require 'dotenv/load'
 require 'colorize'
+require 'dotenv/load'
 
 class Workspace
   attr_reader :users, :channels, :selected
@@ -17,7 +17,7 @@ class Workspace
   def select_user(user_name_or_id)
     user_name_or_id = user_name_or_id.downcase
     @selected = @users.find do |user|
-      valid_users = [user.name.downcase, user.slack_id.downcase, user.real_name.downcase]
+      valid_users = [user.name&.downcase, user.slack_id&.downcase, user.real_name&.downcase]
       valid_users.include?(user_name_or_id)
     end
   end
